@@ -9,16 +9,6 @@ namespace ScheduleSystem.ScheduleAPI.BusinessLogic.Entities
         public TypeOfOccupation TypeOfOccupation { get; set; }
         public Teacher Teacher { get; set; }
         public LectureHall LectureHall { get; set; }
-        public  DateTime Date { get; set; }
-
-        public Schedule(Discipline discipline, TypeOfOccupation typeOfOccupation, Teacher teacher,
-            LectureHall lectureHall, DateTime date)
-        {
-            Discipline = discipline;
-            TypeOfOccupation = typeOfOccupation;
-            Teacher = teacher;
-            LectureHall = lectureHall;
-            Date = date;
-        }
+        public DateTime Date { get; set; }
     }
 }
