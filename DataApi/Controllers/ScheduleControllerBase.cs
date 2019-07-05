@@ -1,13 +1,11 @@
-
 using Microsoft.AspNetCore.Mvc;
-using ScheduleSystem.ScheduleAPI.Controllers.ModelView;
-using Controller = ScheduleSystem.ScheduleAPI.Abstract.Controller;
+using ScheduleSystem.DataApi.Controllers.ModelView;
 
-namespace ScheduleSystem.ScheduleAPI.Controllers
+namespace ScheduleSystem.DataApi.Controllers
 {
     [ApiController]
     [Route("schedule")]
-    public class ScheduleController : Controller
+    public class ScheduleControllerBase : Base.ControllerBase
     {
         [HttpGet]
         public IActionResult ShowAll()

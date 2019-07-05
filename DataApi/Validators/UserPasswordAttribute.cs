@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace ScheduleSystem.ScheduleAPI.Validators
+namespace ScheduleSystem.DataApi.Validators
 {
     public class UserPasswordAttribute : ValidationAttribute
     {
@@ -9,7 +9,11 @@ namespace ScheduleSystem.ScheduleAPI.Validators
         
         public override bool IsValid(object value)
         {
-            if (Regex.IsMatch(value.ToString(), Pattern)) return true;
+            if (Regex.IsMatch(value.ToString(), Pattern))
+            {
+                return true;
+            }
+            
             ErrorMessage =  "Your password must be between 6 characters and 15, have chars in upper and lower cases and also have numbers";
             return false;
         }

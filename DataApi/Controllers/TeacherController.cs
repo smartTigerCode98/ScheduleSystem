@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ScheduleSystem.ScheduleAPI.Controllers.ModelView;
+using ScheduleSystem.DataApi.Controllers.ModelView;
 
-namespace ScheduleSystem.ScheduleAPI.Controllers
+namespace ScheduleSystem.DataApi.Controllers
 {
     [ApiController, Route("teachers")]
     public class TeacherController : Controller

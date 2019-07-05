@@ -2,6 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
+        <AssemblyName>ScheduleSystem.Domain.BusinessLayer</AssemblyName>
+        <RootNamespace>ScheduleSystem.Domain.BusinessLayer</RootNamespace>
     </PropertyGroup>
 
 </Project>

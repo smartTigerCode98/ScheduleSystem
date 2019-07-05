@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using ScheduleSystem.ScheduleAPI.Validators;
+using ScheduleSystem.DataApi.Validators;
 
-namespace ScheduleSystem.ScheduleAPI.Controllers.ModelView
+namespace ScheduleSystem.DataApi.Controllers.ModelView
 {
     public class UserModel
     {

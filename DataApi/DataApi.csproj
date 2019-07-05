@@ -3,13 +3,21 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <AssemblyName>ScheduleSystem.ScheduleAPI</AssemblyName>
-    <RootNamespace>ScheduleSystem.ScheduleAPI</RootNamespace>
+    <AssemblyName>ScheduleSystem.DataApi</AssemblyName>
+    <RootNamespace>ScheduleSystem.DataApi</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BusinessLogic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.BusinessLayer\Domain.BusinessLayer.csproj" />
   </ItemGroup>
 
 </Project>

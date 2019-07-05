@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using ScheduleSystem.ScheduleAPI.Controllers.ModelView;
-using Controller = ScheduleSystem.ScheduleAPI.Abstract.Controller;
+using ScheduleSystem.DataApi.Controllers.ModelView;
 
-namespace ScheduleSystem.ScheduleAPI.Controllers
+namespace ScheduleSystem.DataApi.Controllers
 {
     [ApiController, Route("users")]
-    public class UserController : Controller
+    public class UserControllerBase : Base.ControllerBase
     {
         [HttpPost]
         [Route("login")]

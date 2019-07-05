@@ -1,6 +1,6 @@
 using System;
 
-namespace ScheduleSystem.ScheduleAPI.BusinessLogic.Entities
+namespace ScheduleSystem.Domain.BusinessLayer.Entities
 {
     public class Schedule
     {
