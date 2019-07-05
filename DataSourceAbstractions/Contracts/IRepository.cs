@@ -1,13 +1,12 @@
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DataSourceAbstractions.Contracts
 {
     public interface IRepository<T>
     {
-        IList<T> GetAll();
-        T FindById(int id);
-        void Create(T entities);
-        void Update(T entities);
-        void Delete(T entities);
+        Task<T> FindById(int id);
+        Task Create(T entities);
+        Task Update(T entities);
+        Task Delete(T entities);
     }
 }
