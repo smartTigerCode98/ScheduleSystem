@@ -2,7 +2,7 @@ using ScheduleSystem.ScheduleAPI.BusinessLogic.Entities;
 
 namespace DataSourceAbstractions.Contracts
 {
-    public interface IUserRepository : ICrudRepository<User>
+    public interface IRepository : IRepository<User>
     {
         User FindByEmail(string email);
     }

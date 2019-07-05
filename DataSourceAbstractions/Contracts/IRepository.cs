@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace DataSourceAbstractions.Contracts
 {
-    public interface ICrudRepository<T>
+    public interface IRepository<T>
     {
         IList<T> GetAll();
         T FindById(int id);
