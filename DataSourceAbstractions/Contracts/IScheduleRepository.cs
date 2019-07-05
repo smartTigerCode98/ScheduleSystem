@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ScheduleSystem.ScheduleAPI.BusinessLogic.Entities;
 
 namespace DataSourceAbstractions.Contracts
 {
     public interface IScheduleRepository : IRepository<Schedule>
     {
-        Schedule FindByGroupName(string groupName);
-        IList<Schedule> FindByTeacherName(string teacherName);
+        Task<Schedule> FindByGroupName(string groupName);
+        Task<IList<Schedule>> FindByTeacherName(string teacherName);
     }
 }
