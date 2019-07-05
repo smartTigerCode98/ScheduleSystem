@@ -13,11 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BusinessLogic" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Domain.BusinessLayer\Domain.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
   </ItemGroup>
 
 </Project>

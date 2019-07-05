@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using ScheduleSystem.DataApi.Validators;
 
-namespace ScheduleSystem.DataApi.Controllers.ModelView
+namespace ScheduleSystem.DataApi.Controllers.User.ViewModels
 {
-    public class UserModel
+    public class UserViewModel
     {
         [Required]
         [EmailAddress]

@@ -14,7 +14,8 @@ namespace ScheduleSystem.DataApi.Validators
                 return true;
             }
             
-            ErrorMessage =  "Your password must be between 6 characters and 15, have chars in upper and lower cases and also have numbers";
+            ErrorMessage =  "Your password must be between 6 characters and 15, " +
+                            "have chars in upper and lower cases and also have numbers";
             return false;
         }
     }

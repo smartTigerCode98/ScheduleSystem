@@ -1,10 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using ScheduleSystem.Domain.BusinessLayer.Entities;
+using ScheduleSystem.Domain.Entities;
 
-namespace ScheduleSystem.DataApi.Controllers.ModelView
+namespace ScheduleSystem.DataApi.Controllers.Schedule.ViewModels
 {
-	public class ScheduleModel
+	public class ScheduleViewModel
 	{
 		[Required]
 		public Discipline Discipline { get; set; }
@@ -13,7 +13,7 @@ namespace ScheduleSystem.DataApi.Controllers.ModelView
 		public TypeOfOccupation TypeOfOccupation { get; set; }
 
 		[Required]
-		public Teacher Teacher { get; set; }
+		public Domain.Entities.Teacher Teacher { get; set; }
 
 		[Required]
 		public LectureHall LectureHall { get; set; }

@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using ScheduleSystem.DataApi.Controllers.ModelView;
+using ScheduleSystem.DataApi.Base;
+using ScheduleSystem.DataApi.Controllers.Schedule.ViewModels;
 
-namespace ScheduleSystem.DataApi.Controllers
+namespace ScheduleSystem.DataApi.Controllers.Schedule
 {
-    [ApiController]
     [Route("schedule")]
-    public class ScheduleControllerBase : Base.ControllerBase
+    public class ScheduleController : ApiControllerBase
     {
         [HttpGet]
         public IActionResult ShowAll()
@@ -35,9 +35,9 @@ namespace ScheduleSystem.DataApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(ScheduleModel scheduleModel)
+        public IActionResult Add(ScheduleViewModel scheduleViewModel)
         {
-            return Ok(scheduleModel);
+            return Ok(scheduleViewModel);
         }
 
         [HttpPut]

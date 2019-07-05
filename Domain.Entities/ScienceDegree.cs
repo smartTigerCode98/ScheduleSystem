@@ -1,4 +1,4 @@
-namespace ScheduleSystem.Domain.BusinessLayer.Entities
+namespace ScheduleSystem.Domain.Entities
 {
     public class ScienceDegree
     {

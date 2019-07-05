@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using ScheduleSystem.Domain.BusinessLayer.Entities;
+using ScheduleSystem.Domain.Entities;
 
-namespace ScheduleSystem.DataApi.Controllers.ModelView
+namespace ScheduleSystem.DataApi.Controllers.Teacher.ViewModels
 {
-	public class TeacherModel
+	public class TeacherViewModel
 	{
 		[Required]
 		[StringLength(50, MinimumLength = 3, ErrorMessage = "Name must consist from 3 to 50 chars")]
