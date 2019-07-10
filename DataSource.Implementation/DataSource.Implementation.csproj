@@ -6,4 +6,8 @@
         <AssemblyName>ScheduleSystem.DataSource.Implementation</AssemblyName>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DataSource.Abstractions\DataSource.Abstractions.csproj" />
+    </ItemGroup>
+
 </Project>
