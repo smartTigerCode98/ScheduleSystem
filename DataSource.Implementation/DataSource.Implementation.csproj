@@ -6,4 +6,12 @@
         <AssemblyName>ScheduleSystem.DataSource.Implementation</AssemblyName>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DataSource.Abstractions\DataSource.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    </ItemGroup>
+
 </Project>
