@@ -1,19 +1,30 @@
-﻿using Microsoft.AspNetCore;
+﻿using System.IO;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace ScheduleSystem.DataApi
 {
-	public class Program
+	public static class Program
 	{
 		public static void Main(string[] args)
 		{
-			CreateWebHostBuilder(args).Build().Run();
+			BuildWebHost(args).Run();
 		}
 
-		public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+		public static IWebHost BuildWebHost(string[] args)
 		{
 			return WebHost.CreateDefaultBuilder(args)
-						  .UseStartup<Startup>();
+						  .UseStartup<Startup>()
+						  .UseConfiguration(BuildConfiguration())
+						  .Build();
+		}
+
+		private static IConfiguration BuildConfiguration()
+		{
+			return new ConfigurationBuilder()
+				  .AddJsonFile("appSettings.json")
+				  .Build();
 		}
 	}
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScheduleSystem.DataSource.Implementation.Extensions;
 
 namespace ScheduleSystem.DataApi
 {
@@ -17,6 +18,8 @@ namespace ScheduleSystem.DataApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataSource(Configuration.GetConnectionString("Default"));
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
