@@ -1,4 +1,4 @@
-namespace ScheduleSystem.Domain.Entities
+namespace ScheduleSystem.Domain.Entities.Contracts
 {
 	public interface IEntity
 	{

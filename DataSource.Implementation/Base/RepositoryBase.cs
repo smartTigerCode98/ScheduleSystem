@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ScheduleSystem.DataSource.Abstractions.Contracts;
 using ScheduleSystem.Domain.Entities;
+using ScheduleSystem.Domain.Entities.Contracts;
 
 namespace ScheduleSystem.DataSource.Implementation.Base
 {
-	public abstract class RepositoryBase<TEntity> : IRepository<TEntity>
+	internal abstract class RepositoryBase<TEntity> : IRepository<TEntity>
 			where TEntity : class, IEntity
 	{
 		private readonly ScheduleDbContext _dbContext;

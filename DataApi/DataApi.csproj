@@ -7,6 +7,13 @@
     <RootNamespace>ScheduleSystem.DataApi</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup>
+  </PropertyGroup>
+
+  <Target Name="CopyConfigurationFiles" AfterTargets="AfterBuild">
+    <Copy SourceFiles="appSettings.json" DestinationFolder="$(OutDir)"/>
+  </Target>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />

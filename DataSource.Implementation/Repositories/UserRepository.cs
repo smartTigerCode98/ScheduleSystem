@@ -6,7 +6,7 @@ using ScheduleSystem.Domain.Entities;
 
 namespace ScheduleSystem.DataSource.Implementation.Repositories
 {
-	public sealed class UserRepository : RepositoryBase<User>, IUserRepository
+	internal sealed class UserRepository : RepositoryBase<User>, IUserRepository
 	{
 		public UserRepository(ScheduleDbContext dbContext) : base(dbContext) { }
 		

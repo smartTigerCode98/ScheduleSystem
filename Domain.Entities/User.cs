@@ -1,3 +1,5 @@
+using ScheduleSystem.Domain.Entities.Contracts;
+
 namespace ScheduleSystem.Domain.Entities
 {
 	public class User : IEntity

@@ -6,7 +6,7 @@ using ScheduleSystem.Domain.Entities;
 
 namespace ScheduleSystem.DataSource.Implementation.Repositories
 {
-	public sealed class DisciplineRepository : RepositoryBase<Discipline>, IDisciplineRepository
+	internal sealed class DisciplineRepository : RepositoryBase<Discipline>, IDisciplineRepository
 	{
 		public DisciplineRepository(ScheduleDbContext dbContext) : base(dbContext) { }
 

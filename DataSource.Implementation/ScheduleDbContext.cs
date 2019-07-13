@@ -3,10 +3,11 @@ using ScheduleSystem.Domain.Entities;
 
 namespace ScheduleSystem.DataSource.Implementation
 {
-	public class ScheduleDbContext : DbContext
+	internal class ScheduleDbContext : DbContext
 	{
-		public DbSet<User>       Users       { get; set; }
-		public DbSet<Discipline> Disciplines { get; set; }
+		public DbSet<User>        Users        { get; set; }
+		public DbSet<Discipline>  Disciplines  { get; set; }
+		public DbSet<LectureHall> LectureHalls { get; set; }
 
 		public ScheduleDbContext(DbContextOptions options) : base(options) { }
 	}

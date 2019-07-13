@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using ScheduleSystem.DataSource.Abstractions.Contracts;
 using ScheduleSystem.DataSource.Implementation;
+using ScheduleSystem.DataSource.Implementation.Extensions;
 using ScheduleSystem.DataSource.Implementation.Repositories;
 
 namespace ScheduleSystem.DataApi
@@ -22,9 +23,7 @@ namespace ScheduleSystem.DataApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ScheduleDbContext>(options => options.UseInMemoryDatabase("schedule"));
-
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddDataSource(Configuration.GetConnectionString("Default"));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
