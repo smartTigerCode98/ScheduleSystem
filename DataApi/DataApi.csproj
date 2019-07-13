@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <Target Name="CopyConfigurationFiles" AfterTargets="AfterBuild">
-    <Copy SourceFiles="appSettings.json" DestinationFolder="$(OutDir)"/>
+    <Copy SourceFiles="appSettings.json" DestinationFolder="$(OutDir)" />
   </Target>
 
   <ItemGroup>
@@ -23,6 +23,10 @@
     <ProjectReference Include="..\DataSource.Implementation\DataSource.Implementation.csproj" />
     <ProjectReference Include="..\Domain.BusinessLayer\Domain.BusinessLayer.csproj" />
     <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers" />
   </ItemGroup>
 
 </Project>
