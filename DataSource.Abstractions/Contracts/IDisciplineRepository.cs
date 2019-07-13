@@ -4,6 +4,5 @@ namespace ScheduleSystem.DataSource.Abstractions.Contracts
 {
     public interface IDisciplineRepository : IRepository<Discipline>
     {
-        
     }
 }
