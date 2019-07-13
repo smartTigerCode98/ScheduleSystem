@@ -9,12 +9,7 @@ namespace ScheduleSystem.DataApi.Validators
         
         public override bool IsValid(object value)
         {
-            if (!(value is string passwordString))
-            {
-                return false;
-            }
-            
-            if (Regex.IsMatch(passwordString, Pattern))
+            if (Regex.IsMatch(value.ToString(), Pattern))
             {
                 return true;
             }

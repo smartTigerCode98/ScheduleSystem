@@ -1,6 +1,6 @@
 namespace ScheduleSystem.Domain.Entities
 {
-	public class Discipline : IEntity
+	public class Discipline
 	{
 		public int    Id      { get; set; }
 		public string Name    { get; set; }

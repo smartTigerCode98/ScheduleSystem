@@ -8,9 +8,9 @@ namespace ScheduleSystem.DataSource.Abstractions.Contracts
         Task<T> GetByIdAsync(int id);
         Task<ICollection<T>> GetAllAsync();
         
-        Task CreateAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
+        Task CreateAsync(T entities);
+        Task UpdateAsync(T entities);
+        Task DeleteAsync(T entities);
 
         Task SaveChangesAsync();
     }

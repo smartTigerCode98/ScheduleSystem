@@ -3,7 +3,7 @@ using ScheduleSystem.Domain.Entities;
 
 namespace ScheduleSystem.DataSource.Abstractions.Contracts
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IRepository : IRepository<User>
     {
         Task<User> GetByEmailAsync(string email);
     }
