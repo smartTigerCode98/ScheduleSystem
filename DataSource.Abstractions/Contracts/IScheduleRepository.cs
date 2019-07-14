@@ -7,6 +7,6 @@ namespace ScheduleSystem.DataSource.Abstractions.Contracts
     public interface IScheduleRepository : IRepository<Schedule>
     {
         Task<Schedule> GetByGroupNameAsync(string groupName);
-        Task<IList<Schedule>> GetByTeacherNameAsync(string teacherName);
+        Task<ICollection<Schedule>> GetByTeacherNameAsync(string teacherName);
     }
 }
