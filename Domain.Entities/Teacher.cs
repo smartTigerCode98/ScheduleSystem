@@ -1,6 +1,8 @@
+using ScheduleSystem.Domain.Entities.Contracts;
+
 namespace ScheduleSystem.Domain.Entities
 {
-	public class Teacher
+	public class Teacher : IEntity
 	{
 		public int           Id            { get; set; }
 		public string        Name          { get; set; }
