@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <AssemblyName>ScheduleSystem.Domain.BysinessLayerAbstractions</AssemblyName>
+        <RootNamespace>ScheduleSystem.Domain.BysinessLayerAbstractions</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <AssemblyName>ScheduleSystem.Domain.BusinessLayerImplementation</AssemblyName>
+        <RootNamespace>SheduleSystem.Domain.BusinessLayerImplementation</RootNamespace>
+    </PropertyGroup>
+
+</Project>
