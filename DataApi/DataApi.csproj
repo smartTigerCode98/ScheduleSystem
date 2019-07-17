@@ -21,8 +21,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataSource.Implementation\DataSource.Implementation.csproj" />
-    <ProjectReference Include="..\Domain.BusinessLayer\Domain.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Domain.BusinessLogic.Abstractions\Domain.BusinessLogic.Abstractions.csproj" />
+    <ProjectReference Include="..\Domain.BusinessLogic.Implementations\Domain.BusinessLogic.Implementations.csproj" />
     <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Secured" />
   </ItemGroup>
 
 </Project>
