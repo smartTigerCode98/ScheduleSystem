@@ -14,9 +14,9 @@ namespace ScheduleSystem.DataSource.Implementation.Extensions
 			{
 				throw new ArgumentException(nameof(connectionString));
 			}
-			
+
 			services.AddDbContext<ScheduleDbContext>(options => options.UseNpgsql(connectionString));
-		
+
 			services.RegisterRepositories();
 
 			return services;
@@ -25,13 +25,13 @@ namespace ScheduleSystem.DataSource.Implementation.Extensions
 		private static void RegisterRepositories(this IServiceCollection services)
 		{
 			services.AddScoped<IUserRepository, UserRepository>()
-				.AddScoped<IDisciplineRepository, DisciplineRepository>()
-				.AddScoped<IGroupRepository, GroupRepository>()
-				.AddScoped<ILectureHallRepository, LectureHallRepository>()
-				.AddScoped<IScheduleRepository, ScheduleRepository>()
-				.AddScoped<IScienceDegreeRepository, ScienceDegreeRepository>()
-				.AddScoped<ITeacherRepository, TeacherRepository>()
-				.AddScoped<ITypeOfOccupationRepository, TypeOfOccupationRepository>();
+					.AddScoped<IDisciplineRepository, DisciplineRepository>()
+					.AddScoped<IGroupRepository, GroupRepository>()
+					.AddScoped<ILectureHallRepository, LectureHallRepository>()
+					.AddScoped<IScheduleRepository, ScheduleRepository>()
+					.AddScoped<IScienceDegreeRepository, ScienceDegreeRepository>()
+					.AddScoped<ITeacherRepository, TeacherRepository>()
+					.AddScoped<ITypeOfOccupationRepository, TypeOfOccupationRepository>();
 		}
 	}
 }

@@ -17,12 +17,22 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataSource.Implementation\DataSource.Implementation.csproj" />
-    <ProjectReference Include="..\Domain.BusinessLayer\Domain.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Domain.BusinessLogic.Abstractions\Domain.BusinessLogic.Abstractions.csproj" />
+    <ProjectReference Include="..\Domain.BusinessLogic.Implementations\Domain.BusinessLogic.Implementations.csproj" />
     <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Secured" />
+    <Folder Include="Configurations\Implementations" />
+    <Folder Include="logs" />
   </ItemGroup>
 
 </Project>

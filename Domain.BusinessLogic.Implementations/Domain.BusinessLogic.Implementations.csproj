@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <AssemblyName>ScheduleSystem.Domain.BusinessLogic.Implementations</AssemblyName>
+        <RootNamespace>ScheduleSystem.Domain.BusinessLogic.Implementations</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DataSource.Abstractions\DataSource.Abstractions.csproj" />
+      <ProjectReference Include="..\Domain.BusinessLogic.Abstractions\Domain.BusinessLogic.Abstractions.csproj" />
+      <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+    </ItemGroup>
+    
+</Project>
