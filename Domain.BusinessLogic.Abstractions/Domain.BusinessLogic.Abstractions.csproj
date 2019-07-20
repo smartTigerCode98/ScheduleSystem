@@ -6,4 +6,8 @@
         <RootNamespace>ScheduleSystem.Domain.BusinessLogic.Abstractions</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
+    </ItemGroup>
+
 </Project>

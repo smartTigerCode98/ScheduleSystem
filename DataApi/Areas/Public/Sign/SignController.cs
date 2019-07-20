@@ -23,10 +23,22 @@ namespace ScheduleSystem.DataApi.Areas.Public.Sign
 			await _signService.SignUpAsync(new SignUpModel
 			{
 				Email    = model.Email,
-				Password = null
+				Password = model.Password
 			});
 
 			return Ok();
+		}
+
+		[HttpPost("in")]
+		public async Task<IActionResult> In([FromBody] SignUpViewModel model)
+		{
+			var user = await _signService.SignInAsync(new SignUpModel
+			{
+				Email = model.Email,
+				Password = model.Password
+			});
+
+			return Ok(user);
 		}
 	}
 }
