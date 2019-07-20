@@ -7,6 +7,6 @@ namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services
 	public interface ISignService
 	{
 		Task SignUpAsync(SignUpModel signUpModel);
-		Task<User> SignInAsync(SignUpModel signUpModel);
+		Task<SignInResult> SignInAsync(SignUpModel signUpModel);
 	}
 }

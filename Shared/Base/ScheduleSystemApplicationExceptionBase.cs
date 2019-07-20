@@ -4,11 +4,10 @@ namespace ScheduleSytem.Shared.Base
 {
 	public abstract class ScheduleSystemApplicationExceptionBase : Exception
 	{
-		public object ApplicationData { get; }
+		protected ScheduleSystemApplicationExceptionBase() { }
 
-		protected ScheduleSystemApplicationExceptionBase(object data, string message = null) : base(message)
+		protected ScheduleSystemApplicationExceptionBase(string message) : base(message)
 		{
-			ApplicationData = data;
 		}
 	}
 }

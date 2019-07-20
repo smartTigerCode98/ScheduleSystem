@@ -2,11 +2,19 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using ScheduleSytem.Shared.Base;
+using Serilog;
 
 namespace ScheduleSystem.DataApi.Filters
 {
 	internal sealed class ExceptionHandlingFilter : IActionFilter
 	{
+		private readonly ILogger _logger;
+
+		public ExceptionHandlingFilter(ILogger logger)
+		{
+			_logger = logger;
+		}
+
 		public void OnActionExecuting(ActionExecutingContext context) { }
 
 		public void OnActionExecuted(ActionExecutedContext context)
@@ -18,17 +26,24 @@ namespace ScheduleSystem.DataApi.Filters
 
 			switch (context.Exception)
 			{
-				case ScheduleSystemUserExceptionBase appException:
+				case ScheduleSystemUserExceptionBase userException:
 				{
-					context.Result = new BadRequestObjectResult(appException.UnhandledData);
+					_logger.Warning(userException, "User exception occured");
+					context.Result = new BadRequestResult();
+					break;
+				}
+
+				case ScheduleSystemApplicationExceptionBase appException:
+				{
+					_logger.Error(appException, "App exception occured");
+					context.Result = new StatusCodeResult(500);
 					break;
 				}
 
 				case Exception exception:
 				{
-					context.Result = new JsonResult(new { Message = exception.Message });
-
-					context.HttpContext.Response.StatusCode = 500;
+					_logger.Fatal(exception, "Unhandled exception occured");
+					context.Result = new StatusCodeResult(500);
 					break;
 				}
 			}

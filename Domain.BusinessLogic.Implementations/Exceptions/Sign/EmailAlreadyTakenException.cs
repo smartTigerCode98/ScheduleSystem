@@ -7,6 +7,11 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Exceptions.Sign
 	{
 		public const string ErrorMessage = "Email already taken."; 
 		
-		public EmailAlreadyTakenException(SignUpModel data) : base(data, ErrorMessage) { }
+		public SignUpModel Model { get; }
+
+		public EmailAlreadyTakenException(SignUpModel model) : base(ErrorMessage)
+		{
+			Model = model;
+		}
 	}
 }

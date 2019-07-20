@@ -7,6 +7,11 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Exceptions.Sign
     {
         public const string ErrorMessage = "User not found.";
         
-        public UserNotFoundException(SignUpModel data) : base(data, ErrorMessage) { }
+        public SignUpModel Model { get; }
+        
+        public UserNotFoundException(SignUpModel model) : base(ErrorMessage)
+        {
+            Model = model;
+        }
     }
 }

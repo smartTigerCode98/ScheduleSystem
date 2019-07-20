@@ -7,6 +7,11 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Exceptions.Sign
     {
         private const string ErrorMessage = "Your password does not match";
         
-        public WrongPasswordExeption(SignUpModel signUpModel) : base(signUpModel, ErrorMessage) {}
+        public SignUpModel Model { get; }
+        
+        public WrongPasswordExeption(SignUpModel model) : base(ErrorMessage)
+        {
+            Model = model;
+        }
     }
 }

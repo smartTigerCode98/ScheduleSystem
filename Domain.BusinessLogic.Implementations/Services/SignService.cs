@@ -37,21 +37,25 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Services
 		}
 
 
-		public async Task<User> SignInAsync(SignUpModel signUpModel)
+		public async Task<SignInResult> SignInAsync(SignUpModel signUpModel)
 		{
-			if (!await _userRepository.UserWithEmailExists(signUpModel.Email))
+			var user =  await _userRepository.GetByEmailAsync(signUpModel.Email);
+
+			if (user == null)
 			{
 				throw new UserNotFoundException(signUpModel);
 			}
-
-			var user =  await _userRepository.GetByEmailAsync(signUpModel.Email);
 			
 			if (!_passwordHasher.Verify(user.PasswordHash, signUpModel.Password))
 			{
 				throw new WrongPasswordExeption(signUpModel);
 			}
 
-			return user;
+			return new SignInResult
+			{
+				Id    = user.Id,
+				Email = user.Email
+			};
 		}
 	}
 }

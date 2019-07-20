@@ -4,6 +4,7 @@ using ScheduleSystem.DataApi.Areas.Public.Sign.Models;
 using ScheduleSystem.DataApi.Base;
 using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services;
 using ScheduleSystem.Domain.BusinessLogic.Abstractions.Models.Services.Sign;
+using SignInResult = ScheduleSystem.Domain.BusinessLogic.Abstractions.Models.Services.Sign.SignInResult;
 
 namespace ScheduleSystem.DataApi.Areas.Public.Sign
 {
@@ -30,15 +31,15 @@ namespace ScheduleSystem.DataApi.Areas.Public.Sign
 		}
 
 		[HttpPost("in")]
-		public async Task<IActionResult> In([FromBody] SignUpViewModel model)
+		public async Task<ActionResult<SignInResult>> In([FromBody] SignUpViewModel model)
 		{
-			var user = await _signService.SignInAsync(new SignUpModel
+			var signInResult = await _signService.SignInAsync(new SignUpModel
 			{
 				Email = model.Email,
 				Password = model.Password
 			});
 
-			return Ok(user);
+			return signInResult;
 		}
 	}
 }

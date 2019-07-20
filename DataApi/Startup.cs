@@ -1,15 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+using ScheduleSystem.DataApi.Extensions;
 using ScheduleSystem.DataApi.Filters;
-using ScheduleSystem.DataSource.Abstractions.Contracts;
-using ScheduleSystem.DataSource.Implementation;
+using ScheduleSystem.DataApi.Filters.Logging;
 using ScheduleSystem.DataSource.Implementation.Extensions;
-using ScheduleSystem.DataSource.Implementation.Repositories;
 using ScheduleSystem.Domain.BusinessLogic.Implementations.Extensions;
 
 namespace ScheduleSystem.DataApi
@@ -25,15 +21,21 @@ namespace ScheduleSystem.DataApi
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddSerilog();
+			
 			services.AddDataSource(Configuration.GetConnectionString("Default"));
 
 			services.AddDomainServices();
 
-			services.AddMvc(options => { options.Filters.Add<ExceptionHandlingFilter>(); })
+			services.AddMvc(options =>
+					 {
+						 options.Filters.Add<ExceptionHandlingFilter>();
+						 options.Filters.Add<ActionLoggingFilter>();
+					 })
 					.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 		}
 
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		public void Configure(IApplicationBuilder app)
 		{
 			app.UseMvc();
 		}

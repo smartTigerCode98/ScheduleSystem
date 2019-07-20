@@ -4,11 +4,10 @@ namespace ScheduleSytem.Shared.Base
 {
 	public abstract class ScheduleSystemUserExceptionBase : Exception
 	{
-		public object UnhandledData { get; }
+		protected ScheduleSystemUserExceptionBase() { }
 
-		protected ScheduleSystemUserExceptionBase(object data, string message = null) : base(message)
+		protected ScheduleSystemUserExceptionBase(string message) : base(message)
 		{
-			UnhandledData = data;
 		}
 	}
 }

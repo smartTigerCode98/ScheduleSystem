@@ -19,7 +19,7 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Services
 		{
 			if (String.IsNullOrWhiteSpace(password))
 			{
-				throw new InvalidArgumentException<string>(nameof(password), password);
+				throw new InvalidArgumentException(nameof(password), password);
 			}
 
 			var hashBytes = _sha512.ComputeHash(Encoding.UTF8.GetBytes(password));
@@ -31,7 +31,7 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Services
 		{
 			if (String.IsNullOrWhiteSpace(passwordHash))
 			{
-				throw new InvalidArgumentException<string>(nameof(passwordHash), passwordHash);
+				throw new InvalidArgumentException(nameof(passwordHash), passwordHash);
 			}
 
 			return passwordHash == Hash(givenPassword);
