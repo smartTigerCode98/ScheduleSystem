@@ -21,6 +21,8 @@ namespace ScheduleSystem.DataApi
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddSwaggerGen();
+			
 			services.AddSerilog();
 			
 			services.AddDataSource(Configuration.GetConnectionString("Default"));
@@ -38,6 +40,14 @@ namespace ScheduleSystem.DataApi
 		public void Configure(IApplicationBuilder app)
 		{
 			app.UseMvc();
+			
+			app.UseSwagger();
+
+			app.UseSwaggerUi(c =>
+			{
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+			});
+
 		}
 	}
 }
