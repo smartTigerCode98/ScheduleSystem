@@ -7,6 +7,8 @@ using ScheduleSystem.DataApi.Filters;
 using ScheduleSystem.DataApi.Filters.Logging;
 using ScheduleSystem.DataSource.Implementation.Extensions;
 using ScheduleSystem.Domain.BusinessLogic.Implementations.Extensions;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ScheduleSystem.DataApi
 {
@@ -35,6 +37,8 @@ namespace ScheduleSystem.DataApi
 						 options.Filters.Add<ActionLoggingFilter>();
 					 })
 					.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+			services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "My API", Version = "v1"}); });
 		}
 
 		public void Configure(IApplicationBuilder app)
@@ -43,7 +47,7 @@ namespace ScheduleSystem.DataApi
 			
 			app.UseSwagger();
 
-			app.UseSwaggerUi(c =>
+			app.UseSwaggerUI(c =>
 			{
 				c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
 			});
