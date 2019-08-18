@@ -5,6 +5,7 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <AssemblyName>ScheduleSystem.DataApi</AssemblyName>
     <RootNamespace>ScheduleSystem.DataApi</RootNamespace>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -21,6 +22,9 @@
     <PackageReference Include="Serilog" Version="2.8.0" />
     <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Standalone.CQRS.Core" Version="1.1.5" />
+    <PackageReference Include="Standalone.CQRS.Core.Abstractions" Version="1.1.5" />
+    <PackageReference Include="Standalone.CQRS.DependencyInjection.Microsoft" Version="1.1.4" />
     <PackageReference Include="SwaggerUi" Version="1.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />

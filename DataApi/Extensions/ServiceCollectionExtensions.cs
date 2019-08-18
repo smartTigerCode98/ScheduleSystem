@@ -1,5 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScheduleSystem.DataSource.Abstractions.Contracts.DBContext;
+using ScheduleSystem.DataSource.Implementation;
 using Serilog;
 using Serilog.Events;
 
@@ -32,6 +34,14 @@ namespace ScheduleSystem.DataApi.Extensions
 															   .WriteTo.Console(LogEventLevel.Information, LogFormat);
 
 			return loggerConfiguration;
+		}
+		
+		public static IServiceCollection AddDatabaseContext(this IServiceCollection services)
+		{
+			services.AddDbContext<IDatabaseContext, ScheduleDbContext>();
+			services.AddScoped<IReadOnlyDatabaseContext>(provider => provider.GetRequiredService<IDatabaseContext>());
+
+			return services;
 		}
 	}
 }
