@@ -54,5 +54,6 @@ namespace ScheduleSystem.DataApi.Extensions
 
 			return services;
 		}
+		
 	}
 }

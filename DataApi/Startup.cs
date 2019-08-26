@@ -37,8 +37,7 @@ namespace ScheduleSystem.DataApi
 					.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 			services.AddSwagger();
-
-
+			
 			services.AddCqrs();
 			
 			services.AddDatabaseContext();
@@ -48,13 +47,7 @@ namespace ScheduleSystem.DataApi
 		{
 			app.UseMvc();
 			
-			app.UseSwagger();
-
-			app.UseSwaggerUI(c =>
-			{
-				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Schedule system");
-			});
-
+			app.UseSwaggerInShortForm();
 		}
 	}
 }
