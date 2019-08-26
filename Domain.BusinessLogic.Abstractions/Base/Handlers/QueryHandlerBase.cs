@@ -4,7 +4,7 @@ using ScheduleSystem.DataSource.Abstractions.Contracts.DBContext;
 using Standalone.CQRS.Core.Abstractions.Contracts.Handlers;
 using Standalone.CQRS.Core.Abstractions.Contracts.Sources;
 
-namespace ScheduleSystem.DataApi.Base.Handlers
+namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Base.Handlers
 {
     public abstract class QueryHandlerBase<TQuery, TResult> : IQueryHandler<TQuery, TResult>
         where TQuery : IQuery<TResult>

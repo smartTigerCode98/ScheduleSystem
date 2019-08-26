@@ -2,8 +2,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScheduleSystem.DataSource.Abstractions.Contracts.DBContext;
 using ScheduleSystem.DataSource.Implementation;
+using ScheduleSystem.Domain.BusinessLogic.Implementations.Handlers.Commands;
+using ScheduleSystem.Domain.BusinessLogic.Implementations.Handlers.Queries;
 using Serilog;
 using Serilog.Events;
+using Standalone.CQRS.DependencyInjection.Microsoft.Extensions;
 
 namespace ScheduleSystem.DataApi.Extensions
 {
@@ -39,7 +42,15 @@ namespace ScheduleSystem.DataApi.Extensions
 		public static IServiceCollection AddDatabaseContext(this IServiceCollection services)
 		{
 			services.AddDbContext<IDatabaseContext, ScheduleDbContext>();
-			services.AddScoped<IReadOnlyDatabaseContext>(provider => provider.GetRequiredService<IDatabaseContext>());
+
+			return services;
+		}
+
+
+		public static IServiceCollection AddCqrs(this IServiceCollection services)
+		{
+			services.AddCQRS(options => { options.AddCommandHandlers(assemblies:typeof(CreateUserCommandHandler).Assembly)
+				                                 .AddQueryHandlers(assemblies:typeof(GetUserByEmailAndPasswordHandler).Assembly);});
 
 			return services;
 		}

@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using ScheduleSystem.Domain.BusinessLogic.Abstractions.Models.Services.Sign;
 using ScheduleSystem.Domain.Entities;
 
-namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services
+namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Services
 {
 	public interface ISignService
 	{

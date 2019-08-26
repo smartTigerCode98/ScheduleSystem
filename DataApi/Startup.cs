@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,7 +8,6 @@ using ScheduleSystem.DataApi.Filters;
 using ScheduleSystem.DataApi.Filters.Logging;
 using ScheduleSystem.DataSource.Implementation.Extensions;
 using ScheduleSystem.Domain.BusinessLogic.Implementations.Extensions;
-using Standalone.CQRS.DependencyInjection.Microsoft.Extensions;
 
 
 namespace ScheduleSystem.DataApi
@@ -38,8 +38,9 @@ namespace ScheduleSystem.DataApi
 
 			services.AddSwagger();
 
-			services.AddCQRS();
 
+			services.AddCqrs();
+			
 			services.AddDatabaseContext();
 		}
 

@@ -1,14 +1,14 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
-using ScheduleSystem.DataApi.Base.Handlers;
-using ScheduleSystem.DataApi.Contracts.Commands;
 using ScheduleSystem.DataSource.Abstractions.Contracts.DBContext;
-using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Base.Handlers;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Services;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Commands;
 using ScheduleSystem.Domain.Entities;
 using Standalone.CQRS.Core.Abstractions.Contracts.Buses;
+using System;
 
-namespace ScheduleSystem.DataApi.Handlers.Commands
+namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Handlers.Commands
 {
     public class CreateUserCommandHandler : CommandHandlerBase<CreateUserCommand>
     {
@@ -20,12 +20,16 @@ namespace ScheduleSystem.DataApi.Handlers.Commands
         }
 
         public override async Task Execute(CreateUserCommand command, CancellationToken ctoken = default)
-        {
+        { 
+           
+
             var user = new User
             {
                 Email = command.Email,
                 PasswordHash = _passwordHasher.Hash(command.Password)
             };
+             Console.WriteLine(user.Email);
+             Console.WriteLine(user.PasswordHash);
 
             DatabaseContext.Users.Add(user);
 

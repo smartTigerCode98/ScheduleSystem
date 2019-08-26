@@ -1,4 +1,4 @@
-namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services
+namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Services
 {
 	public interface IPasswordHasher
 	{

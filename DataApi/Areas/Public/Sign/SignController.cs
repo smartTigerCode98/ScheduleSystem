@@ -1,12 +1,10 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ScheduleSystem.DataApi.Areas.Public.Sign.Models;
 using ScheduleSystem.DataApi.Base.Controllers;
-using ScheduleSystem.DataApi.Contracts.Commands;
-using ScheduleSystem.DataApi.Contracts.Queries.UserByEmailAndPassword;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Commands;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Queries.UserByEmailAndPassword;
 using Standalone.CQRS.Core.Abstractions.Contracts.Buses;
-using SignInResult = ScheduleSystem.Domain.BusinessLogic.Abstractions.Models.Services.Sign.SignInResult;
 
 namespace ScheduleSystem.DataApi.Areas.Public.Sign
 {

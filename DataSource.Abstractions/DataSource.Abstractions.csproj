@@ -4,10 +4,15 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <AssemblyName>ScheduleSystem.DataSource.Abstractions</AssemblyName>
         <RootNamespace>ScheduleSystem.DataSource.Abstractions</RootNamespace>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
     </ItemGroup>
 
 </Project>

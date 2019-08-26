@@ -4,10 +4,21 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <AssemblyName>ScheduleSystem.Domain.BusinessLogic.Abstractions</AssemblyName>
         <RootNamespace>ScheduleSystem.Domain.BusinessLogic.Abstractions</RootNamespace>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DataSource.Abstractions\DataSource.Abstractions.csproj" />
       <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Base" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Standalone.CQRS.Core" Version="1.1.5" />
+      <PackageReference Include="Standalone.CQRS.Core.Abstractions" Version="1.1.5" />
     </ItemGroup>
 
 </Project>

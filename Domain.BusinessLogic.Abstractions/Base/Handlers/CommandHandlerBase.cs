@@ -5,7 +5,7 @@ using Standalone.CQRS.Core.Abstractions.Contracts.Buses;
 using Standalone.CQRS.Core.Abstractions.Contracts.Handlers;
 using Standalone.CQRS.Core.Abstractions.Contracts.Sources;
 
-namespace ScheduleSystem.DataApi.Base.Handlers
+namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Base.Handlers
 {
     public abstract class CommandHandlerBase<TCommand> : ICommandHandler<TCommand> where TCommand : ICommand
     {

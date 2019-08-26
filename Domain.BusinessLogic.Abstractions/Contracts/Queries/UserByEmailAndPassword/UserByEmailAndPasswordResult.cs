@@ -1,4 +1,4 @@
-namespace ScheduleSystem.DataApi.Contracts.Queries.UserByEmailAndPassword
+namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Queries.UserByEmailAndPassword
 {
     public class UserByEmailAndPasswordResult
     {

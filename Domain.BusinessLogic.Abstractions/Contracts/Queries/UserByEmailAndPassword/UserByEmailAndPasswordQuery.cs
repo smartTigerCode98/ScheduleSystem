@@ -1,6 +1,6 @@
 using Standalone.CQRS.Core.Abstractions.Contracts.Sources;
 
-namespace ScheduleSystem.DataApi.Contracts.Queries.UserByEmailAndPassword
+namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Queries.UserByEmailAndPassword
 {
     public class UserByEmailAndPasswordQuery : IQuery<UserByEmailAndPasswordResult>
     {

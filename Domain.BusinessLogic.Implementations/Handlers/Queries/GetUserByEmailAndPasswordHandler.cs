@@ -2,12 +2,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ScheduleSystem.DataApi.Base.Handlers;
-using ScheduleSystem.DataApi.Contracts.Queries.UserByEmailAndPassword;
 using ScheduleSystem.DataSource.Abstractions.Contracts.DBContext;
-using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Base.Handlers;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Services;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Queries.UserByEmailAndPassword;
 
-namespace ScheduleSystem.DataApi.Handlers.Queries
+namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Handlers.Queries
 {
     public class GetUserByEmailAndPasswordHandler : QueryHandlerBase<UserByEmailAndPasswordQuery, UserByEmailAndPasswordResult>
     {

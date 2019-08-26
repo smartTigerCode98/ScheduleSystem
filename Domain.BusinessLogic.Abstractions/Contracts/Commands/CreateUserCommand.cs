@@ -1,6 +1,6 @@
 using Standalone.CQRS.Core.Abstractions.Contracts.Sources;
 
-namespace ScheduleSystem.DataApi.Contracts.Commands
+namespace ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Commands
 {
     public class CreateUserCommand : ICommand
     {
