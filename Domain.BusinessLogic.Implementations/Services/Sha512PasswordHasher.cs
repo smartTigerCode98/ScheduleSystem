@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Services;
 using ScheduleSytem.Shared.Exceptions;
 
 namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Services
@@ -24,7 +24,9 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Services
 
 			var hashBytes = _sha512.ComputeHash(Encoding.UTF8.GetBytes(password));
 
-			return Encoding.UTF8.GetString(hashBytes);
+			var hashString = Convert.ToBase64String(hashBytes);
+
+			return hashString;
 		}
 
 		public bool Verify(string passwordHash, string givenPassword)

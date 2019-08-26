@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using ScheduleSystem.DataSource.Abstractions.Contracts;
-using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Services;
 using ScheduleSystem.Domain.BusinessLogic.Abstractions.Models.Services.Sign;
 using ScheduleSystem.Domain.BusinessLogic.Implementations.Exceptions.Sign;
 using ScheduleSystem.Domain.Entities;

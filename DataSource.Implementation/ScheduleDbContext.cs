@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using ScheduleSystem.DataSource.Abstractions.Contracts.DBContext;
 using ScheduleSystem.Domain.Entities;
 
 namespace ScheduleSystem.DataSource.Implementation
 {
-	internal class ScheduleDbContext : DbContext
+	public class ScheduleDbContext : DbContext, IDatabaseContext
 	{
 		public DbSet<User>        Users        { get; set; }
 		public DbSet<Discipline>  Disciplines  { get; set; }

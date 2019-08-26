@@ -4,6 +4,7 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <AssemblyName>ScheduleSystem.Domain.BusinessLogic.Implementations</AssemblyName>
         <RootNamespace>ScheduleSystem.Domain.BusinessLogic.Implementations</RootNamespace>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,6 +15,9 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Standalone.CQRS.DependencyInjection.Microsoft" Version="1.1.4" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
     </ItemGroup>
     
 </Project>

@@ -1,45 +1,41 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ScheduleSystem.DataApi.Areas.Public.Sign.Models;
-using ScheduleSystem.DataApi.Base;
-using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services;
-using ScheduleSystem.Domain.BusinessLogic.Abstractions.Models.Services.Sign;
-using SignInResult = ScheduleSystem.Domain.BusinessLogic.Abstractions.Models.Services.Sign.SignInResult;
+using ScheduleSystem.DataApi.Base.Controllers;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Commands;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Queries.UserByEmailAndPassword;
+using Standalone.CQRS.Core.Abstractions.Contracts.Buses;
 
 namespace ScheduleSystem.DataApi.Areas.Public.Sign
 {
 	[Route("api/public/sign")]
 	public sealed class SignController : ApiControllerBase
 	{
-		private readonly ISignService _signService;
-
-		public SignController(ISignService signService)
-		{
-			_signService = signService;
-		}
+		public SignController(ICommonBus commonBus) : base(commonBus) {}
 
 		[HttpPost("up")]
-		public async Task<IActionResult> Up([FromBody] SignUpViewModel model)
+		public Task Up([FromBody] SignUpViewModel model)
 		{
-			await _signService.SignUpAsync(new SignUpModel
-			{
-				Email    = model.Email,
-				Password = model.Password
-			});
-
-			return Ok();
-		}
-
-		[HttpPost("in")]
-		public async Task<ActionResult<SignInResult>> In([FromBody] SignUpViewModel model)
-		{
-			var signInResult = await _signService.SignInAsync(new SignUpModel
+			return Handle(new CreateUserCommand
 			{
 				Email = model.Email,
 				Password = model.Password
 			});
-
-			return signInResult;
 		}
+		
+		[HttpPost("in")]
+		public Task<UserByEmailAndPasswordResult> In([FromBody] SignUpViewModel model)
+		{
+			var query = new UserByEmailAndPasswordQuery
+			{
+				Email = model.Email, Password = model.Password
+				
+			};
+
+			return Execute<UserByEmailAndPasswordQuery, UserByEmailAndPasswordResult>(query);
+		}
+		
+
+		
 	}
 }

@@ -1,7 +1,9 @@
 using System.Security.Cryptography;
 using Microsoft.Extensions.DependencyInjection;
-using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracs.Services;
+using ScheduleSystem.Domain.BusinessLogic.Abstractions.Contracts.Services;
 using ScheduleSystem.Domain.BusinessLogic.Implementations.Services;
+using Swashbuckle.AspNetCore.Swagger;
+
 
 namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Extensions
 {
@@ -14,6 +16,12 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Extensions
 
 			services.AddSingleton<SHA512, SHA512Managed>();
 
+			return services;
+		}
+
+		public static IServiceCollection AddSwagger(this IServiceCollection services)
+		{
+			services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "Schedule system", Version = "v1"}); });
 			return services;
 		}
 	}
