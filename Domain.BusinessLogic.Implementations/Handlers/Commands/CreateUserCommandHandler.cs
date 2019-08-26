@@ -28,9 +28,7 @@ namespace ScheduleSystem.Domain.BusinessLogic.Implementations.Handlers.Commands
                 Email = command.Email,
                 PasswordHash = _passwordHasher.Hash(command.Password)
             };
-             Console.WriteLine(user.Email);
-             Console.WriteLine(user.PasswordHash);
-
+            
             DatabaseContext.Users.Add(user);
 
             await DatabaseContext.SaveChangesAsync(ctoken);
